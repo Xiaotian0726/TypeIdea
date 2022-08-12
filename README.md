@@ -1,5 +1,5 @@
 # TypeIdea
-A blog system implemented by `Django`.
+A blog system implemented by [Django](https://www.djangoproject.com/) (deployed on Windows).
 
 ## Environment Install
 1. Install python 3.6.   
@@ -13,7 +13,6 @@ Change directory to your project folder. e.g `D:/TypeIdea/`
 
 3. Activate virtualenv   
 For windows user. Input in termial `./venv/Scripts/activate`   
-For linux user. Input in termial `source ./venv/Scripts/activate`   
 > Note: Deactivate just input `deactivate` in your terminal.
 
 3. Install django and other packages  
@@ -21,12 +20,19 @@ For linux user. Input in termial `source ./venv/Scripts/activate`
 
 
 ## Run server:
+## Setup
+Create admin account:
 ```shell
-cd typeidea
-python manage.py runserver
+python manage.py createsuperuser
 ```
 
-## Use dbshell:
+Create database and tables:
+```shell
+python manage.py makemigrations
+python manage.py migrate
+```
+
+Use dbshell on Windows (Optional):
 1. Download `sqlite-tools-win32-x86-*******.zip` on [SQLite Download Page](https://www.sqlite.org/download.html)
 2. Unpack it and just paste it to the folder where you have your `manage.py`. You can paste all 3 files there (`sqldiff.exe`, `sqlite3.exe`, `sqlite3_analyzer.exe`).
 3. Then: 
@@ -36,8 +42,24 @@ python manage.py runserver
     ...
     sqlite> .exit
     ```
-   
-## Project admin
+
+## Run
+Run server:
+```shell
+python manage.py runserver
+```
+Access browser:
+```
+localhost:8000/super_admin
+localhost:8000/admin
+```
+
+
+## Memo
+Admin account of author's deployment
 - Username: admin
 - Password: admin123456
 - Email address: 1208571536@qq.com
+
+## References
+https://github.com/the5fire/typeidea
