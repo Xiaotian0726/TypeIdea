@@ -2,34 +2,31 @@
 A blog system implemented by [Django](https://www.djangoproject.com/) (deployed on Windows).
 
 ## Environment Install
-1. Install python 3.6.   
-[download link](https://www.python.org/downloads/release/python-360/). For windows user,  you can only download the `Windows x86-64 embeddable zip file`, and then unpack it with a specific folder. e.g. `D:\python-3.6.0-embed-amd64`
+1. Install [Python3.6](https://www.python.org/downloads/release/python-360/) on Windows
 
 2. Create virtual environment   
 Change directory to your project folder. e.g `D:/TypeIdea/`    
 `virtualenv -p D:\python-3.6.0-embed-amd64\python.exe venv`  
-> Note: If the virtualenv doesn't exist in your computer environment, please install it using pip.   
-`pip install virtualenv`  
+   > Note: If the virtualenv doesn't exist in your computer environment, please install it using pip.   
+   `pip install virtualenv`  
 
 3. Activate virtualenv   
-For windows user. Input in termial `./venv/Scripts/activate`   
-> Note: Deactivate just input `deactivate` in your terminal.
+For Windows user. Input in terminal `./venv/Scripts/activate`   
+   > Note: Deactivate just input `deactivate` in your terminal.
 
-3. Install django and other packages  
+4. Install django and other packages  
 `pip install -r requirements.txt`
 
-
-## Run server:
 ## Setup
-Create admin account:
-```shell
-python manage.py createsuperuser
-```
-
 Create database and tables:
 ```shell
 python manage.py makemigrations
 python manage.py migrate
+```
+
+Create admin account:
+```shell
+python manage.py createsuperuser
 ```
 
 Use dbshell on Windows (Optional):
