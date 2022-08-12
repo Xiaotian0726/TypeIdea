@@ -1,4 +1,5 @@
 # TypeIdea
+A blog system implemented by `Django`.
 
 ## Run server:
 ```shell
@@ -16,3 +17,8 @@ python manage.py runserver
     ...
     sqlite> .exit
     ```
+   
+## Project admin
+- Username: admin
+- Password: admin123456
+- Email address: 1208571536@qq.com
