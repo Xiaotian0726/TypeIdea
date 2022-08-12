@@ -1,6 +1,25 @@
 # TypeIdea
 A blog system implemented by `Django`.
 
+## Environment Install
+1. Install python 3.6.   
+[download link](https://www.python.org/downloads/release/python-360/). For windows user,  you can only download the `Windows x86-64 embeddable zip file`, and then unpack it with a specific folder. e.g. `D:\python-3.6.0-embed-amd64`
+
+2. Create virtual environment   
+Change directory to your project folder. e.g `D:/TypeIdea/`    
+`virtualenv -p D:\python-3.6.0-embed-amd64\python.exe venv`  
+> Note: If the virtualenv doesn't exist in your computer environment, please install it using pip.   
+`pip install virtualenv`  
+
+3. Activate virtualenv   
+For windows user. Input in termial `./venv/Scripts/activate`   
+For linux user. Input in termial `source ./venv/Scripts/activate`   
+> Note: Deactivate just input `deactivate` in your terminal.
+
+3. Install django and other packages  
+`pip install -r requirements.txt`
+
+
 ## Run server:
 ```shell
 cd typeidea
