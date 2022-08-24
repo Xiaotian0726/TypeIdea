@@ -1,0 +1,86 @@
+{% extends "./base.html" %}
+
+{% block title %}
+    {% if category %}
+    分类页：{{ category.name }}
+    {% elif tag %}
+    标签页：{{ tag.name }}
+    {% else %}
+    首页
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    <ul>
+        {% for post in post_list %}
+        <li>
+            <a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
+            <div>
+                <span>作者：{{ post.owner.username }}</span>
+                <span>分类：{{ post.category.name }}</span>
+                <span>摘要：{{ post.desc }}</span>
+            </div>
+        </li>
+        {% endfor %}
+
+    {% if page_obj %}
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">上一页</a>
+        {% endif %}
+            Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">下一页</a>
+        {% endif %}
+    {% endif %}
+
+    </ul>
+{% endblock %}
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="zh">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>TypeIdea 博客系统 - 文章列表</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    {% if category %}-->
+<!--    分类页：{{ category.name }}-->
+<!--    {% endif %}-->
+
+<!--    {% if tag %}-->
+<!--    标签页：{{ tag.name }}-->
+<!--    {% endif %}-->
+
+<!--    <ul>-->
+<!--        {% for post in post_list %}-->
+<!--        <li>-->
+<!--            <a href="/post/{{ post.id }}.html">{{ post.title }}</a>-->
+<!--            <div>-->
+<!--                <span>作者：{{ post.owner.username }}</span>-->
+<!--                <span>分类：{{ post.category.name }}</span>-->
+<!--                <span>摘要：{{ post.desc }}</span>-->
+<!--                <p>正文：{{ post.content }}</p>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+<!--    <hr/>-->
+<!--    <div>-->
+<!--        分类导航：-->
+<!--        {% for c in nav_categories %}-->
+<!--        <a href="/category/{{ c.id }}/">{{ c.name }}</a>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        侧边栏展示：-->
+<!--        {% for sidebar in sidebars %}-->
+<!--        <h4>{{ sidebar.title }}</h4>-->
+<!--        {{ sidebar.content_html }}-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
