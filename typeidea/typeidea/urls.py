@@ -17,7 +17,8 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from .custom_site import custom_site
-from blog.views import post_list, post_detail, PostDetailView, IndexView, CategoryView, TagView
+# from blog.views import post_list, post_detail
+from blog.views import PostDetailView, IndexView, CategoryView, TagView
 from config.views import links
 
 urlpatterns = [
@@ -28,7 +29,7 @@ urlpatterns = [
     url(r'^$', IndexView.as_view(), name='index'),
     url(r'^category/(?P<category_id>\d+)/$', CategoryView.as_view(), name='category-list'),
     url(r'^tag/(?P<tag_id>\d+)/$', TagView.as_view(), name='tag-list'),
-    url(r'^post/(?P<pk>\d+).html$', PostDetailView.as_view(), name='post-detail'),
+    url(r'^post/(?P<post_id>\d+).html$', PostDetailView.as_view(), name='post-detail'),
 
     url(r'^links/$', links, name='links'),
 

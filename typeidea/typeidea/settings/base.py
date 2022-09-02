@@ -53,10 +53,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'typeidea.urls'
 
+# THEME = 'default'
+THEME = 'bootstrap'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        # Django 会首先去这个目录查找模板，找不到的情况下再去各个 App 下查找
+        # 如果后续需要构建、使用新的主题，只需要修改 THEME 即可
+        'DIRS': [os.path.join(BASE_DIR, 'themes', THEME, 'templates')],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
