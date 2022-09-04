@@ -25,14 +25,16 @@ class Category(models.Model):
         return self.name
 
     @classmethod
-    def get_navs(cls):
+    def get_navs_and_normals(cls):
         categories = cls.objects.filter(status=cls.STATUS_NORMAL)
-        _ = ([], [])
+
+        nav_categories, normal_categories = [], []
         for c in categories:
-            _[int(c.is_nav)].append(c)
+            nav_categories.append(c) if c.is_nav else normal_categories.append(c)
+
         return {
-            'nav_categories': _[int(True)],
-            'normal_categories': _[int(False)],
+            'nav_categories': nav_categories,
+            'normal_categories': normal_categories,
         }
 
 
