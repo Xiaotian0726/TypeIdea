@@ -53,11 +53,8 @@ localhost:8000/super_admin
 localhost:8000/admin
 ```
 
-## Memo
-Admin account of the author's deployment: 
-- Username: admin
-- Password: admin123456
-- Email address: 1208571536@qq.com
+## P.S.
+- With PyCharm, you need to reset the `Content Root` to the subdirectory `typeidea`, otherwise an editor resource reference error will occur.
 
 ## References
 https://github.com/the5fire/typeidea

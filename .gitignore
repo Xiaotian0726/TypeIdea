@@ -1,12 +1,11 @@
 .idea
+migrations
 
+*.exe
 *.sqlite3
 
-sqldiff.exe
-sqlite3.exe
-sqlite3_analyzer.exe
+################################### Python.gitignore ###################################
 
-################### Python.gitignore ###################
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
