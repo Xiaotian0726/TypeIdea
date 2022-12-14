@@ -57,7 +57,7 @@ class PostAdmin(BaseOwnerAdmin):
     form = PostAdminForm
 
     list_display = [
-        'title', 'category', 'status', 'created_time', 'owner', 'operator'
+        'title', 'category', 'status', 'created_time', 'owner', 'operator', 'pv', 'uv'
     ]
     list_display_links = []
 

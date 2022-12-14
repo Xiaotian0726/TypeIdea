@@ -82,8 +82,8 @@ class Post(models.Model):
     owner = models.ForeignKey(User, verbose_name="作者", on_delete=models.DO_NOTHING)
     created_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
 
-    pv = models.PositiveIntegerField(default=1)
-    uv = models.PositiveIntegerField(default=1)
+    pv = models.PositiveIntegerField(default=1)  # Page View 页面访问。同一个用户的多次访问可以被累积
+    uv = models.PositiveIntegerField(default=1)  # Unique Visitor 独立访客。以 cookie 为依据区分不同访客
 
     class Meta:
         verbose_name = verbose_name_plural = "文章"
