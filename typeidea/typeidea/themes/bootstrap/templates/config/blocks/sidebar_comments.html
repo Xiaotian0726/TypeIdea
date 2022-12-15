@@ -13,7 +13,7 @@
     {% for comment in comments %}
     <li>
         {% autoescape off %}
-        <a href="/post/{{ comment.target }}">{{ comment.target.title }}</a> | {{ comment.nickname }} : {{ comment.content}}
+        <a href="{{ comment.target }}">{{ comment.target }}</a> | {{ comment.nickname }} : {{ comment.content}}
         {% endautoescape %}
     </li>
     {% endfor %}

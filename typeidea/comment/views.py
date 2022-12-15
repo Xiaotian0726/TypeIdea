@@ -8,7 +8,7 @@ from .forms import CommentForm
 
 class CommentView(TemplateView):
     http_method_names = ['post']
-    template_name = 'comment/result.html'
+    template_name = 'comment/comment_result.html'
 
     def post(self, request, *args, **kwargs):
         comment_form = CommentForm(request.POST)

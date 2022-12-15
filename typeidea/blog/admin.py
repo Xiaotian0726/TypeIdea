@@ -88,7 +88,7 @@ class PostAdmin(BaseOwnerAdmin):
             )
         }),
         ('额外信息', {
-            'classes': ('collapse', ),
+            'classes': ('open', ),
             'fields': ('tag',),
         })
     )
