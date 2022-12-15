@@ -1,5 +1,5 @@
 # TypeIdea
-A blog system implemented by [Django](https://www.djangoproject.com/) (deployed on Windows).
+A blog system implemented with [Django](https://www.djangoproject.com/) (deployed on Windows).
 
 ![](img/homepage.jpg)
 
@@ -54,7 +54,7 @@ localhost:8000/admin
 ```
 
 ## P.S.
-- With PyCharm, you need to reset the `Content Root` to the subdirectory `typeidea`, otherwise an editor resource reference error will occur.
+- With PyCharm, you need to set the `Content Root` to the subdirectory `typeidea`. Otherwise, an editor resource reference error will occur.
 
 ## References
 https://github.com/the5fire/typeidea
